@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03-justify-content属性</title>
+    <style type="text/css">
+      .container {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        flex-wrap: wrap;
+
+        /* 
+        justify-content:
+        flex-start(默认) |
+        flex-end(右对齐) |
+        center(居中) |
+        space-between (两端对齐)|
+        space-around(两次间隔相等) | 
+        space-evenly(平均分布)
+         */
+
+        justify-content: space-evenly;
+      }
+      .item {
+        margin: 10px 0;
+        border-radius: 10%;
+        text-align: center;
+        line-height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">元素1</div>
+      <div class="item">元素2</div>
+      <div class="item">元素3</div>
+      <div class="item">元素4</div>
+      <div class="item">元素5</div>
+      <div class="item">元素6</div>
+    </div>
+
+    <script>
+      const items = document.querySelectorAll(".item");
+      for (let i in items) {
+        const rand1 = Math.round(Math.random() * 255);
+        const rand2 = Math.round(Math.random() * 255);
+        const rand3 = Math.round(Math.random() * 255);
+        items[i].style.background =
+          "rgb(" + rand1 + "," + rand2 + "," + rand3 + ")";
+        items[i].style.height = "200px";
+        items[i].style.width = "180px";
+      }
+    </script>
+  </body>
+</html>

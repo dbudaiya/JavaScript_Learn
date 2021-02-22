@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #btn {
+        color: orange;
+        font-size: 28px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="btn">点击</div>
+    <script>
+      /*浏览器为我们提供 文档节点对象 这个对象是window属性
+            - 在网页使用表示获取整个网页代码*/
+      console.log(document);
+
+      // 获取btn
+      var btn = document.getElementById("btn");
+      console.log(btn);
+
+      //操作DOM中的btn节点
+      btn.innerHTML = "李智恩";
+    </script>
+  </body>
+</html>

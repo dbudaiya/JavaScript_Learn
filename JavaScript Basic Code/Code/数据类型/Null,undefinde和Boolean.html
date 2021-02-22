@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>document</title>
+	<script type="text/javascript">
+		//1.typeof  运算符
+		//四基两空一对象
+		//
+		//  1.原始类型(最基本的数据类型)  
+		let str = "String";
+		let bool = true;
+		let num = 123;
+
+		let n = null;
+		let u = undefined;
+
+		console.log(typeof str);
+
+		// 2.对象:对事件的抽象
+		// 定义:
+		let obj = {};
+
+
+		// 狭义的对象
+		// 数组(array)
+		// 函数(function)
+		typeof window;
+		typeof {};
+		typeof [];
+		console.log(typeof obj);
+
+
+		// Javascript提供有三种检测类型的方法:
+		// typeof运算符 :返回一个值的数据类型
+		var v =function(){}
+		console.log(typeof v)
+
+		let is 
+		console.log(typeof is)
+		// instanceof运算符
+		
+		console.log({} instanceof Array);
+
+
+		// Object.prototype.toString
+		// 
+		console.log(typeof undefined === false)
+
+		console.log("转化null = "+!Boolean(null))
+
+		console.log(null ==undefined);
+
+		// 为false:undefined,null,0,NaN,'',"",false
+		// 为true:true,[],{}
+		if([]){
+			console.log("我是一个数组")
+		}
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

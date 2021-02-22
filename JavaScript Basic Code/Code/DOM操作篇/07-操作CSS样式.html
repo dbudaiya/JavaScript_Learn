@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #div1 {
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1">1111111111111111</div>
+    <button id="btn">点击按钮</button>
+
+    <script>
+      var btn = document.getElementById("btn");
+      btn.addEventListener("click", function () {
+        var div1 = document.getElementById("div1");
+        div1.style.width = "600px";
+      });
+
+      //   报出错,还是体验下JQuery的神奇之处在来操作CSS样式八....
+      // 操作DOM查询节点元素总使用ID选择器
+    </script>
+  </body>
+</html>

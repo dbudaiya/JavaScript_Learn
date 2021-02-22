@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04-align-items属性</title>
+    <style type="text/css">
+      .container {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        /*
+        align-items:strech(默认) | flex-start | flex-end | center | baseline 
+            它可能取5个值。具体的对齐方式与侧轴的方向有关，下面假设侧轴从上到下:
+            flex-start：侧轴的起点对齐。
+            flex-end：侧轴的终点对齐。
+            center：侧轴的中点对齐。
+            baseline: 项目的第一行文字的基线对齐。
+            stretch（默认值）：【如果项目未设置高度或设为auto，将占满整个容器的高度。 
+        */
+        align-items: center;
+      }
+      .item {
+        margin: 10px 0;
+        border-radius: 10%;
+        text-align: center;
+      }
+      .item:nth-child(1) {
+        height: 50px;
+      }
+      .item:nth-child(2) {
+        height: 150px;
+      }
+      .item:nth-child(3) {
+        height: 90px;
+      }
+      .item:nth-child(4) {
+        height: 50px;
+      }
+      .item:nth-child(5) {
+        height: 190px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">元素1</div>
+      <div class="item">元素2</div>
+      <div class="item">元素3</div>
+      <div class="item">元素4</div>
+      <div class="item">元素5</div>
+    </div>
+
+    <script>
+      const items = document.querySelectorAll(".item");
+      for (let i in items) {
+        const rand1 = Math.round(Math.random() * 255);
+        const rand2 = Math.round(Math.random() * 255);
+        const rand3 = Math.round(Math.random() * 255);
+        items[i].style.background =
+          "rgb(" + rand1 + "," + rand2 + "," + rand3 + ")";
+        // items[i].style.height = "200px";
+        // items[i].style.width = "180px";
+      }
+    </script>
+  </body>
+</html>

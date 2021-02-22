@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\.."
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\Wechat-Learn"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\Vue.js-Learn"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "JavaScrippt-Learn"
+	}
+}

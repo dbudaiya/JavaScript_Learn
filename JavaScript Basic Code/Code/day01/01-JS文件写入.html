@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01-JS文件写入</title>
+  <script>
+    //    控制浏览器弹出警告框 
+    //alert("1")
+
+    //让计算机输出一个内容
+    document.write("2")
+
+    //控制台输出内容
+    console.log("3");
+
+    //函数表达式
+    const budai = () => {
+      alert("我将会被点击！！")
+    };
+
+    const meg = new Error("我是错误!!");
+    console.log(meg);
+
+
+  </script>
+</head>
+
+<body>
+  <!-- 将JS代码写在标签onclick中，点击按钮执行JS代码 
+  虽然写在属性中，但属于结果和行为耦合，不方便维护，我们不推荐使用-->
+  <button onclick="alert('我被点击了')">阿牛</button>
+  <button onclick="budai()">阿狗</button>
+  <!-- 将JS代码写在超链接的herf属性中，点击链接是，会执行JS代码 -->
+  <a href="javascript:document.write('我在一个新的页面中')">百度逛网</a>
+</body>
+
+</html>

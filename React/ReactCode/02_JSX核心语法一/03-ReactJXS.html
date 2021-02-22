@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+  <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+  <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+
+  <!-- React JSX来代替常规的JavaScript
+          - JSX看起来很像XML的Javascript语法扩展
+          - 使用JSX编写代码更加简单快捷   
+  -->
+  <div id="a"></div>
+  <script type="text/babel">//自定义文件src="helloworld_react.js"
+    const element = (
+      <div>
+        <h1>Hellow world!!</h1>
+        <h2>{1 + 2}</h2>
+        <h3>{1 == 2 ? true : false}</h3>
+        <p data-myattr="somevalue">
+          实例中P元素添加自定义元素data-myattr,添加自定义属性需要使用data-前缀
+        </p>
+      </div>
+    )
+    ReactDOM.render(
+      element,
+      document.getElementById('a')
+    )
+  </script>
+
+  <!-- 2.嵌入表达式 -->
+  <div id="aa"></div>
+  <script type="text/babel">
+    const name = 'John Person'
+    const element1 = <h1>hello ,{name}</h1>
+
+    ReactDOM.render(
+      element1,
+      document.getElementById('aa')
+    )
+  </script>
+
+  <div id="cc"></div>
+  <script type="text/babel">
+    const user = {
+      name: '杜审言',
+      sex: 'man'
+    }
+
+    function formatName(user) {
+      return user.name + user.sex;
+    }
+    const element3 = (
+      <h1>
+        hello,{formatName(user)}
+      </h1>
+    )
+    ReactDOM.render(
+      element3,
+      document.getElementById('cc')
+    )
+
+  </script>
+
+</body>
+
+</html>

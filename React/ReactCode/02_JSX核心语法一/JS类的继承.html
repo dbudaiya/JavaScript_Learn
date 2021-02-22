@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    class Person {
+      constructor(name, age) {
+        this.name = name
+        this.age = age
+
+      }
+
+      Call() {
+        console.log("我是" + this.name)
+      }
+    }
+
+    class Student extends Person {
+      constructor(name, age, sno) {
+        super(name, age);
+        this.sno = sno
+      }
+
+    }
+
+    const app = new Student("小布袋", 12, 19876356);
+    console.log(app)
+    app.Call()
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

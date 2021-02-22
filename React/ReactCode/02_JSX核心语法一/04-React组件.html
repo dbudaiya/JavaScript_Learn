@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+  <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+  <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+  <!-- React 组件
+        - App组件使用Name,....组件来输出对应信息
+        - 类似JS函数,接收任意入参(即props),返回用于描述页面展示内容的React元素
+  -->
+  <div id="a"></div>
+  <div id="b"></div>
+  <div id="c"></div>
+  <script type="text/babel">
+    function Welcome(props) {//1.使用函数来用户自定义组件
+      return <h1>hello ,{props.name}</h1>
+    }
+
+    class Welcome1 extends React.Component {//1.使用ES6的class来用户自定义组件,不要忘记给props前面加上this属性
+      render() {
+        return <h1>hello ,{this.props.name}</h1>
+      }
+    }
+
+    //2.渲染组件
+    const element = <Welcome name="Sara" />
+    ReactDOM.render(
+      element,
+      document.getElementById('b')
+    )
+  </script>
+
+
+  <script type="text/babel">
+    class Come extends React.Component {//2.使用ES6的class来用户自定义组件
+      render() {
+        return <h1>hello ,{this.props.man}</h1>
+      }
+    }
+
+    function App() {//3.组合组件
+      return (
+        <div>
+          <Come man="aa" />
+          <Come man="bb" />
+          <Come man="cc" />
+        </div>
+      )
+    }
+
+    ReactDOM.render(//4.渲染组件
+      <App />,//这种写的方式不错,是组件的一种写法
+      document.getElementById('c')
+    )
+  </script>
+
+  <script type="text/babel">
+    //提取组件:将组件拆分为更小的组件
+
+    function Comment(props) {
+      return (
+        <div className="Comment">
+          <div className="UserInfo">
+            <img className="Avatar"
+              src={props.author.avatarUrl}
+              alt={props.author.name}
+            />
+            <div className="UserInfo-name">
+              {props.author.name}
+            </div>
+          </div>
+          <div className="Comment-text">
+            {props.text}
+          </div>
+          <div className="Comment-date">
+            {formatDate(props.date)}
+          </div>
+        </div>
+      );
+    }
+  </script>
+
+
+  <script type="text/babel">
+    //const aa = <HelloMessage name="Runoob" />
+    // 复合组件
+    class AClass extends React.Component {//使用ES6calss定义一个组件,在组件中传递参数,使用this.props对象
+      render() {
+        return <h1>hello {this.props.Hb}</h1>;
+      }
+    }
+
+    function HelloMessage(props) {//使用函数定义组件
+      return (
+        <div>
+          <AClass Hb={props.Hb} />
+        </div>
+      )
+    }
+    ReactDOM.render(
+      <HelloMessage Hb={'大师兄'} />,
+      document.getElementById('a')
+    )
+  </script>
+
+</body>
+
+</html>

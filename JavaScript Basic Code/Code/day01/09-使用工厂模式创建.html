@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    const obj = {
+      name: "顺悟空",
+      sex: '男',
+      age: 18,
+      sayName: function () {
+        console.log(this.sex);
+      }
+    }
+    obj.sayName()
+
+    /*使用工厂模式创建对象
+        -通过该方法可以大批量的创建对象
+      */
+    
+    function createPerson(name, age, sex) {
+      const obj = new Object();
+      obj.name = name;
+      obj.age = age;
+      obj.sex = sex;
+      obj.sayName1 = function () {
+        console.log(this.age);
+      }
+      //将新的对象返回
+      return obj;
+    }
+    var newobj1 = createPerson("猪八戒", 11, "男");
+    var newobj2 = createPerson("做自己", 16, "女");
+    var newobj3 = createPerson("蜘蛛侠", 87, "未知");
+
+    console.log(newobj1);
+    console.log(newobj2);
+    console.log(newobj3);
+
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

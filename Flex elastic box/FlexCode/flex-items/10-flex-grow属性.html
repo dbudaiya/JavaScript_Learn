@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  *{
+    padding: 0;
+    margin: 0;
+  }
+  /* p元素同时存在width和flex-grow时，实际width的计算方法 */
+div{
+  width: 400px;
+  margin: 20px auto;
+  height: 200px;
+  display: flex;
+  border: 2px solid navajowhite;
+}
+p{
+  width: 100px;
+  height: 100px;
+}
+p:nth-child(1){
+  background: brown;
+}
+p:nth-child(2){
+  background: yellowgreen;
+}
+.part1{
+  flex-grow: 3;
+}
+/* .part1的width是100px，两个p元素的width为200px，但是div的width是400px；所以多余出了200px，grow的均值是200px/5 =40px，所以.part1的实际width是100+40*3 = 220px */
+.part2{
+  flex-grow: 2;
+}
+/* .part2的width是100px，两个p元素的width为200px，但是div的width是400px；所以多余出了200px，grow的均值是200px/5 = 40px，所以.part2的实际width是100+40*2 = 180px */
+</style>
+<body>
+  <div>
+    <p class="part1"></p>
+    <p class="part2"></p>
+  </div>
+</body>
+</html>

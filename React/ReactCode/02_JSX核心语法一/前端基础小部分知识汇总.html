@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+  <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+  <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    function tick() {
+      // function Web(props) {
+      //   return <h1>Hello {props.name}</h1>
+      // }
+      const stylename = { color: 'red', fontSize: '30px', textAlign: 'center' }
+      const newtime = "现在的时间是:"
+
+      const user = {
+        name: 'React',
+        sex: '部分基础集合'
+      }
+
+      function newProject(user) {
+        return user.name + user.sex;
+      }
+      class Person extends React.Component {
+        constructor() {
+          super()
+
+          this.state = {
+            message: '月亮与六便士'
+          }
+        }
+        render() {
+          return (
+            
+            <div>
+              <h1 style={stylename}>{newProject(user)}</h1>
+              <h2>{this.state.message}</h2>
+              <a href={this.props.url}>Hello {this.props.name}</a>
+              {1 + 2}
+            </div>
+          )
+        }
+      }
+
+      class Children extends React.Component {
+        constructor() {
+          super();
+          this.state = {
+            time: new Date().toLocaleTimeString()
+          }
+        }
+        render() {
+          return (
+            <div>
+              <p>{this.props.newtime},{this.state.time}</p>
+            </div>
+          )
+        }
+      }
+
+      function App(props) {
+        return (
+          <div>
+            <Person name={props.name} url={props.url} />,
+            <Children newtime={props.newtime} />
+          </div>
+        )
+      }
+
+      const element = (
+        <App name="React" newtime="现在的时间是" url="http://www.baidu.com" />
+      )
+      ReactDOM.render(
+        element,
+        document.getElementById('root')
+      )
+    }
+    setInterval(tick, 1000)
+  </script>
+</body>
+
+</html>

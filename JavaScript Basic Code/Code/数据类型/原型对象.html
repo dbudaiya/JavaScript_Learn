@@ -1,0 +1,60 @@
+  <!DOCTYPE html>
+<html>
+<head>
+	<title>原型对象</title>
+	<script type="text/javascript">
+		/*
+		prototype  原型
+
+		每创建一个函数时,解析器都会向函数中添加	一个属性Prortotype
+			这个属性对应一个对象,我们称其为原型对象
+		如果函数作为普通函数调用prototype没有任何作用
+		当函数以构造函数时调用时,所创建的对象中都会一个隐含的属性
+			指向该构造函数的原型对象,通过__proto__来访问属性
+
+		原型相当于一个公共的区域,所以同一个类的实例度可以访问到这个原型对象
+			我们可以将对象中公共的部分统一设置到原型对象中
+
+
+		对象自身中也有原型
+		Object的原型为null
+		 */
+		
+		function Person(){}
+		function myClass(){}
+
+		//设置原型:像Person的原型中添加属性a
+		Person.prototype.a = 123;
+
+		//想Person中添加方法sayName
+		Person.prototype.sayName = function(){
+			return this.a;
+		}
+
+		var p1 = new Person();
+		var p2 = new Person();
+		//想p1中添加a
+		p1.a = "abc"
+		console.log(p1.a)
+		console.log(p2.a)
+		
+		console.log(p1.sayName())	
+
+		//检查原型
+		console.log(Person.prototype == myClass.prototype) //fasle
+		console.log(p1.__proto__ == Person.prototype)	//true
+
+		//使用in检查某对象中是否含有某属性,如果对象中没有原型中有,则返回true
+		console.log("a" in p1) //true
+
+		//使用对象中hasOwnProperty()来检查对象自声中是否含有该属性
+		console.log(p1.hasOwnProperty("a"))  //true
+
+		console.log(p1.hasOwnProperty("hasOwnProperty"))
+		console.log(p1.__proto__.hasOwnProperty("hasOwnProperty"))
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <button onclick="alert('不推荐使用')">点击按钮</button>  -->
+    <!-- 上述写法将成为结构和行为耦合,不方便维护,不推荐使用  -->
+
+    <button>点击按钮</button>
+    <script>
+      /* 1.事件的基本使用*/
+      // 可以在事件中设置JS代码: 当事件被触发时,代码会被执行
+
+      // 什么是事件? 用户与浏览器中的交互行为,如点击按钮,鼠标移动关闭窗口
+      //获取对象
+      var btn = document.getElementsByTagName("button");
+      console.log(btn);
+
+       /* 处理函数形式绑定响应事件
+            - 当事件被触发时,其对应的方法也一样被调用     
+       */
+      //绑定事件
+      btn[0].onclick = function () {
+        console.log("-------------我将被打印-----------------");
+      };
+    </script>
+  </body>
+</html>

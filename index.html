@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>改变背景颜色</title>
+    <style>
+      #div {
+        width: 200px;
+        height: 200px;
+        margin: 20px auto;
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div">div文本</div>
+    <button onclick="budai()">点击显示隐藏</button>
+    <script>
+      let divs = document.querySelector("#div");
+      console.log(divs.style.display);
+      function budai() {
+        if (divs.style.display == "none") {
+          divs.style.display = "block";
+        } else {
+          divs.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" />
+</head>
+
+<body>
+  <header class="image-slider">
+    <!-- 第一张幻灯片 -->
+    <div class="slide current">
+      <img class="image" src="./image/buildings-city-city-view-cityscape-597909.jpg" alt="北京">
+      <!-- 描述 -->
+      <div class="content">
+        <h1 class="title">Beijing</h1>
+        <p class="description">
+          北京市，简称“京”，是中华人民共和国首都、也是中国4个直辖市之一；北京是国家中心城市、超大城市，全国政治中心、文化中心、国际交往中心、科技创新中心，是世界著名古都和现代化国际城市，也是中国共产党中央委员会、中华人民共和国中央人民政府和全国人民代表大会常务委员会的办公所在地。
+        </p>
+      </div>
+    </div>
+    <div class="slide ">
+      <img class="image" src="./image/illuminated-tower-2614818.jpg">
+      <!-- 描述 -->
+      <div class="content">
+        <h1 class="title">Tokyo</h1>
+        <p class="description">
+          东京（とうきょう、Tōkyō），日本首都，位于日本关东平原中部，是面向东京湾的国际大都市，日本三大都市圈之一东京都市圈的中心城市。“东京”狭义上指东京都、旧东京府或东京都区部（旧东京市），亦可泛指东京都市圈
+          。东京是江户幕府的所在地，江户在庆应4年7月（1868年9月）改名为东京。
+        </p>
+      </div>
+    </div>
+    <div class="slide">
+      <img class="image" src="./image/high-rise-buildings-1434580.jpg">
+      <!-- 描述 -->
+      <div class="content">
+        <h1 class="title">New York</h1>
+        <p class="description">
+          纽约市（New York
+          City，简称NYC），位于美国纽约州东南部大西洋沿岸，是美国第一大城市及第一大港口，纽约都市圈为世界上最大的城市圈之一，与英国伦敦、中国香港并称为“纽伦港”（Nylonkong）。纽约与伦敦并列为全世界最顶级的国际大都市。2018年11月，纽约被GaWC评为Alpha++级世界一线城市。
+        </p>
+      </div>
+    </div>
+
+    <!-- 控制按钮 -->
+    <div id="prev"><i class="fas fa-chevron-left"></i></div>
+    <div id="next"><i class="fas fa-chevron-right"></i></div>
+  </header>
+
+  <script>
+    // 后退按钮
+    const prev = document.querySelector("#prev")
+    // 前进按钮
+    const next = document.querySelector("#next")
+
+    // 获取所有轮播图片
+    const slides = document.querySelectorAll(".slide")
+
+    //当前播放的幻灯片
+    var currentIndex = 0;
+
+    //是否自动播放
+    var autoPlay = true
+
+    //播放方向,前进或后退
+    var forword = false
+
+    var interval = 5000
+
+    next.addEventListener("click", handleNextClicked)
+
+    prev.addEventListener("click", handlePrevClick)
+
+    // 判断是否自动播放
+    if (autoPlay) {
+      setInterval(forword ? handleNextClicked : handlePrevClick, interval)
+    }
+
+    function handleNextClicked() {
+      // 当前幻灯片
+      let current = slides[currentIndex]
+      current.classList.remove("current")
+
+      currentIndex++
+      if (currentIndex >= slides.length) {
+        currentIndex = 0
+      }
+
+      // 给下一张幻灯片加上currennt class
+      slides[currentIndex].classList.add("current")
+    }
+
+    function handlePrevClick() {
+
+      //当前幻灯片
+      let current = slides[currentIndex]
+      //去掉当前幻灯片的current属性
+      current.classList.remove("current")
+
+      currentIndex--
+      if (currentIndex < 0) {
+        currentIndex = slides.length - 1
+      }
+
+      slides[currentIndex].classList.add("current")
+    }    
+  </script>
+</body>
+
+</html>

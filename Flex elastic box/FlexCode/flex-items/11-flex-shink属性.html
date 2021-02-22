@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  *{
+    padding: 0;
+    margin: 0;
+  }
+div{
+  width: 400px;
+  margin: 20px auto;
+  height: 200px;
+  display: flex;
+  box-sizing: border-box;
+  border: 2px solid navajowhite;
+}
+/* p元素同时存在width和flex-shrink时，实际width的计算方法 */
+p{
+  width: 300px;
+  height: 100px;
+}
+p:nth-child(1){
+  background: brown;
+}
+p:nth-child(2){
+  background: yellowgreen;
+}
+.part1{
+  flex-shrink: 1;
+}
+/* .part1的width是300px，两个p元素的width为600px，但是div的width是400px；所以超出了200px，shrink的均值是200px/4 = 50px，所以.part1的实际width是300-50 = 250px */
+.part2{
+  flex-shrink: 3;
+}
+/* .part2的width是300px，两个p元素的width为600px，但是div的width是400px；所以超出了200px，shrink的均值是200px/4 = 50px，所以.part2的实际width是300-50*3 = 150px */
+</style>
+<body>
+  <div>
+    <p class="part1"></p>
+    <p class="part2"></p>
+  </div>
+</body>
+</html>

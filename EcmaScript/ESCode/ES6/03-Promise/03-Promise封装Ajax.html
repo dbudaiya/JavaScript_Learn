@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03-Promise封装ajax</title>
+  </head>
+  <body>
+    <script>
+      // 开始封装ajax
+      const p = new Promise((resolve, reject) => {
+        // 1.创建XMLHttpRequest
+        const xhr = new XMLHttpRequest();
+
+        // 2.初始化
+        xhr.open("GET", "http://123.207.32.32:8000/api/h8/home/multidata");
+
+        //3.发送请求
+        xhr.send();
+
+        // 4.绑定事件，处理响应结果
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            if (xhr.status >= 200 && xhr.status < 300) {
+              resolve(xhr.response);
+            } else {
+              reject(xhr.status);
+            }
+          }
+        };
+      });
+
+      // 处理异步
+      p.then(
+        (res) => {
+          console.log(res);
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    </script>
+  </body>
+</html>

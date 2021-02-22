@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01-编写位置</title>
+  </head>
+  <body>
+    <!-- 1.在HTML中直接执行Javascirpt中(不推荐你这么写)
+    将JS代码写在标签onclick中，点击按钮执行JS代码. 
+    虽然写在属性中，但属于结果和行为耦合，不方便维护，我们不推荐使用 -->
+    <a href="" onclick="alert('弹出A1')">弹出</a>
+    <a href="javascript:alert('弹出A2')">弹出</a>
+
+    <!-- 2. 书写到script标签中 -->
+    <script type="text/script">
+      alert("弹出B1");
+    </script>
+
+    <!-- 3. 引入外部文件 -->
+    <script src="./js/test.js"></script>
+  </body>
+</html>

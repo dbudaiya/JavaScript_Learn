@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        // 1.获取body标签
+        console.log(document.getElementsByTagName("body"));
+
+        // 2.在document中保存有body属性,是body的引用
+        console.log(document.body);
+
+        // 3.document.documentElement保存的是html根标签
+        console.log(document.documentElement);
+
+        // 4.document.all 表示页面所有元素
+        console.log(document.all); //是数组类型,可进行遍历
+
+        // 5.获取#div1下所有的div元素
+        // document.querySlector() :需要一个选择器的字符串作为参数,根据CSS选择器来查询一个元素节点对象
+        console.log(document.querySelector("#div1 div"));
+
+        //5.2 document.querySelectorAll(): 该方法和上一个方法相比语法类似,不同的是他会将符合条件的元素封装到一个数组中返回出来
+        console.log(document.querySelectorAll("div")); //NodeList
+      };
+    </script>
+  </head>
+  <body>
+    <div id="div1">
+      <div></div>
+      <div></div>
+    </div>
+
+    <button>点击</button>
+  </body>
+</html>

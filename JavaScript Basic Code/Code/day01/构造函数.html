@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		/* 
+		 创建一个函数专门用来创建对象的
+		 构造函数就是一个普通的函数，创建方式和普通函数没有区别
+		 不同的是构造函数习惯命名是首字母大写
+		 
+		 构造函数和普通函数的调用方式不同
+		 普通函数直接调用*/
+		function Person(name, age, message) {
+			this.name = name;
+			this.age = age;
+			this.message = function () {
+				alert("burnish")
+			};
+		};
+		var hhd = new Person("小东西", 12, 'ss');
+		// console.log(hhd.message());
+		function Dog() { }
+
+		/* 使用instanceof可以检查一个对象是否是一个类的实例
+		语法：
+			 对象 instanceof 构造函数
+		 	
+			 如果是，则返回true，则返回false
+	 */
+		console.log()
+
+			(function (a, b) {
+				console.log(a + b);
+			}(1, 2))
+		// 立即执行函数
+
+		// 构造函数
+		function Person1(a, b, c) {
+			this.a = a;
+			this.c = c;
+			this.message = function () {
+				console.log("打印输出" + this.c);
+			}
+		}
+		Person1(1, 2, 4);
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

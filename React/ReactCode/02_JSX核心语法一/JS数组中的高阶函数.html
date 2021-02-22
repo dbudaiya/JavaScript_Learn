@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    const names = ["abc", "cba", "nba", "mba"];
+
+    // 数组遍历
+    for (let i in names) {
+      console.log(names[i])
+    }
+
+    for (let name of names) {
+      console.log(name);
+    }
+
+    // const newNames = names.forEach((item, index, keys) => {
+    //   return item
+    // })
+
+    // console.log(newNames)   接收返回值报错,不接受就无报错
+
+    const newNames = names.map((item, index, keys) => {
+      return item
+    })
+
+    console.log(newNames)
+
+    const nums = [110, 123, 50, 32, 55, 10, 8, 333];
+    const newNums = nums.filter((item, index, arr) => {
+      return item >= 100
+    })
+
+    console.log(newNums)
+    console.log(nums.slice(-2));
+
+    
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

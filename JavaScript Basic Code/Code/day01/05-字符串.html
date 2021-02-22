@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+    数据类型指的是字面量类型
+      在JS中一般有六种数据类型
+        1.String 字符串
+        2.boolean 布尔
+        3.Number 数值
+        4.underfine 未定义
+        5.NUll 空值
+          -String,boolean,Number,Null,undefined属于基本数据类型
+
+        6.Object 对象
+          -Object是引用数据类型
+          - Array
+          -Function
+
+        值和值之间没有任何联系
+        如果使用基本数据类型,所创建的变量都是独立的,不能成为整体
+        
+    
+    */
+    var str = "hello"
+    str = str + ',今天天气多少度:"30oC"';
+    console.log(str)
+
+    /*
+    在字符串中我们使用\作为转义字符
+      \"  双引号
+      \'  单引号
+      \n  换行
+      \t  制表符
+      \\  斜杠
+    */
+    var str1 = "我说:\"今天天气不错\"";
+    console.log(str1);
+
+    //Number类型
+    var num = 123
+    var num1 = "456"
+    console.log(num);
+
+    //使用typeof检查一个变量的类型
+    console.log(typeof num1);
+
+    /*Js中表示数值的最大值
+      -如果使用Number表示的数字超过最大值,则会返回一个
+      Infinity 表示正无穷
+      -Infinity 表示负无穷
+      使用typeof检查Infinity时也会返回Number
+      使用typeof检查NaN时也会返回Number
+
+    */
+    console.log(Number.MAX_VALUE);
+
+    //如果使用JS进行浮点运算,得到一个不正确的值
+    //所以不要使用JS和别的语言对金融类进行计算
+    console.log(0.1 + 0.2); //0.30000000000000004
+
+
+    /*
+    Boolean 类型
+      真假
+    */
+    var bool = true
+    console.log(typeof bool);
+
+
+    /*
+    Null类型的值只有一个:null
+      null这个值专门用来表示一个为空的对象
+
+
+    underfine类型的值只有一个:underfine
+    当声明一个变量,但是并不给变量赋值时,他的值就是underfine
+    */
+    var a = null;
+    console.log(typeof a);
+
+    var b ;
+    console.log(typeof b);
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

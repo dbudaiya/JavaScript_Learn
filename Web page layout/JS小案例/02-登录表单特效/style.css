@@ -1,0 +1,85 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: serif-serif;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: url("background.jpeg") no-repeat fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .login-from {
+  width: 240px;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+}
+.container .login-from h2 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #3d5245;
+}
+.container .login-from input,
+.container .login-from button {
+  margin: 6px 0;
+  height: 36px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  padding: 0 14px;
+  color: #3d5245;
+  outline: 0;
+}
+.container .login-from button {
+  margin-top: 24px;
+  background-color: #3d5245;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.4s;
+  position: relative;
+}
+.container .login-from button:hover {
+  background-color: #3d5245;
+}
+.container .login-from button:hover::before {
+  transition: 1s;
+  transform: translateX(320px);
+  opacity: 0.7;
+}
+.container .login-from button:hover::after {
+  transition: 1s;
+  transform: translateX(320px);
+  opacity: 1;
+}
+.container .login-from:focus {
+  outline: 0;
+}
+.container .login-from::before,
+.container .login-from::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 100%;
+  background-color: rgba(179, 255, 210, 0.5);
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: skewX(-15deg);
+  filter: blur(30px);
+  overflow: hidden;
+  transform: translateX(-100px);
+}
+.container .login-from::after {
+  width: 40px;
+  background-color: rgba(179, 255, 210, 0.3);
+  left: 60px;
+  opacity: 0;
+  filter: blur(5px);
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="../react/babel.min.js"></script>
+  <script src="../react/react.development.js"></script>
+  <script src="../react/react-dom.development.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    class App extends React.Component {
+      constructor(props) {
+        super(props)
+
+        this.state = {
+          name: '杜审言',//String
+          age: 12,//number
+          movies: ["abc", 'cba', 'bax'],//Array
+
+          flag: false,
+          test1: null,
+          test2: undefined,
+
+          // 对象不能作为jsx的子类
+          obj: {
+            name: 'aa',
+            da: 11
+          }
+        }
+      }
+
+      render() {
+
+        const { name, age, movies, flag, test1, test2, obj } = this.state
+        return (
+          <div>
+            {/*这是一段注释*/}
+            <h2>{name}</h2>
+            <h2>{age}</h2>
+            <h2>{movies}</h2>
+
+            {/*不能显示*/}
+            <h2>{flag ? "我能够正常显示" : null}</h2>
+            <h2>{test1 + ''}</h2>
+            <h3>{test2}</h3>
+
+            obj.map((item)=>{
+              return <li>{item}</li>
+            })
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(
+      <App />,
+      document.getElementById('root')
+    )
+  </script>
+
+</body>
+
+</html>

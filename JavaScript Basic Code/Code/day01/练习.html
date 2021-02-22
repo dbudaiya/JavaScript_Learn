@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>if练习1</title>
+		<script type="text/javascript">
+			/*
+			 * 	从键盘输入小明的期末成绩:
+			 *	当成绩为100时，'奖励一辆BMW'
+			 *	当成绩为[80-99]时，'奖励一台iphone15s'
+			 *	当成绩为[60-80]时，'奖励一本参考书'
+			 *	其他时，什么奖励也没有
+			 */
+
+			var score = 10;
+
+			if (score == 100) {
+				console.log('给你一辆宝马，小东西！');
+			} else if (score >= 80 && score < 99) {
+				console.log('奖励一本参考书');
+			} else if (score >= 60 && score < 80) {
+				console.log("奖励一辆宝马")
+			} else {
+				console.log('滚远点');
+			}
+
+
+			/*
+			 * 	大家都知道，男大当婚，女大当嫁。那么女方家长要嫁女儿，当然要提出一定的条件： 
+			 *	高：180cm以上; 富:1000万以上; 帅:500以上;
+			 *	如果这三个条件同时满足，则:'我一定要嫁给他'
+			 *	如果三个条件有为真的情况，则:'嫁吧，比上不足，比下有余。' 
+			 *	如果三个条件都不满足，则:'不嫁！' 
+			 */
+			var budai = {
+				height: 188,
+				money: 100,
+				had: 100
+			}
+			if (budai.height > 180 && budai.money > 1000 && budai.had > 500) {
+				console.log('我一定要嫁给他')
+			} else if (budai.height > 180 || budai.money > 1000 || budai.had > 500) {
+				console.log('嫁吧，比上不足，比下有余。')
+			} else {
+				console.log('不嫁')
+			}
+
+			/*
+			 * 	编写程序，由键盘输入三个整数分别存入变量num1、num2、num3，
+			 * 	对他们进行排序，并且从小到大输出。
+			 */
+			var bb = Math.max(1, 2, 3);
+			console.log(bb);
+
+
+			//创建外层循环，用来控制乘法表的高度
+			for (var i = 1; i <= 9; i++) {
+				//创建一个内层循环来控制图形的宽度
+				for (var j = 1; j <= i; j++) {
+					document.write("<span>" + j + "*" + i + "=" + i * j + ' |' + "</span>");
+				}
+				//输出一个换行
+				document.write("<br />");
+			}
+
+			var hhh = function(a) {
+				return a
+			}
+			hhh(1001);
+			//函数对象
+
+			/*
+			 * 定义一个函数，判断一个数字是否是偶数，如果是返回true，否则返回false
+			 */
+			function ha1(num) {
+				if (num % 2 == 0) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+			var dome = ha1(2);
+			console.log(dome);
+			if (dome) {
+				console.log("这是一个偶数")
+			} else {
+				console.log('这是一个奇数')
+			}
+
+
+
+			/*
+			 * 定义一个函数，可以根据半径计算一个圆的面积，并返回计算结果
+			 * 3.14*r*r
+			 */
+			function mianji(R) {
+				return 3.14 * R * R
+			}
+			var jisuan = mianji(3);
+			console.log(jisuan);
+			/*
+			 * 创建一个函数，可以在控制台中输出一个人的信息
+			 * 	可以输出人的 name age gender address
+			 * 
+			 * 实参可以是任意的数据类型，也可以是一个对象
+			 * 	当我们的参数过多时，可以将参数封装到一个对象中，然后通过对象传递
+			 */
+
+			function sayHello(o) {
+				console.log("我是" + o.name + ",今年我" + o.age + "岁了," + "我是一个" + o.gender + "人" + ",我住在" + o.address);
+				//console.log(o);
+			};
+			//sayHello(12,'budai',true,null);
+			var budai = {
+				name: "孙悟空",
+				age: 18,
+				address: "花果山",
+				gender: "男"
+			}
+			sayHello(budai)
+
+			/*
+			 实参可以是对象也可以是一个函数
+			 */
+			function fun(a) {
+				console.log("a = " + a);
+			}
+			//fun("alert(budaishu)")
+			fun(function() {alert('hello')})
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

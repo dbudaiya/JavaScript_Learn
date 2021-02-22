@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello React!</title>
+  <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+  <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+  <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+  <!-- React元素渲染,描述屏幕输出内容 -->
+  <div id="bb"></div>
+  <script type="text/babel">
+    // 元素渲染
+    const aa = <h1>日出昔日</h1>
+    ReactDOM.render(
+      aa,
+      document.getElementById('bb')
+    )
+  </script>
+
+  <div id="example"></div>
+  <script type="text/babel">
+    var styleNN = { color: 'red', textAlign: 'center' }
+    class Name1 extends React.Component {
+      constructor() {
+        super()
+        const { name } = this.props;
+
+      }
+      render() {
+        return (
+          <div>
+            <h1 style={styleNN}></h1>
+            <h2>网站名称:{Name}</h2>
+          </div>
+        )
+      };
+    }
+
+    class Url extends React.Component {
+      constructor() {
+        super()
+        const { url, name } = this.props;
+
+      }
+      render() {
+        return (
+          <a href={url}>{Name}</a>
+          // <h1>网站地址:{this.props.url}</h1>
+        )
+      }
+    }
+
+    function App(props) {
+      return (
+        <div>
+          <Name1 Name={props.Name} />
+          <Url url={props.url} />
+        </div>
+      )
+    }
+
+    ReactDOM.render(
+      // props
+      <App Name={'菜鸟教程'} url={'http:www.baidu.com'} />,
+      <App Name={'淘宝教程'} url={'http:www.taobao.com'} />,
+      document.getElementById('example')
+    )
+
+  </script>
+
+  <div id="a"></div>
+  <script type="text/babel">
+    function tick() {
+      const element = (
+        <div>
+          <h1>{this.props.date}</h1>
+        </div>
+      );
+
+      ReactDOM.render(
+        element,
+        document.getElementById('a')
+      )
+    }
+    setInterval(tick, 1000)
+
+    function tick() {
+      // 更新元素渲染
+      const element = (
+        <div>
+          <h1>hello world!!</h1>
+          <h2>小孙子</h2>
+          <h2>现在的时间是{new Date().toLocaleTimeString()}</h2>
+        </div>
+      );
+      ReactDOM.render(
+        element,
+        document.getElementById('a')
+      )
+    };
+    setInterval(tick, 1000);
+  </script>
+
+</body>
+
+</html>

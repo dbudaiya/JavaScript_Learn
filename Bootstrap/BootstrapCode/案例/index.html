@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap中文文档</title>
+    <link rel="icon" href="./img/ia_100000000024.ico" />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      #top a {
+        color: #563d7c;
+      }
+      .bs-docs-masthead {
+        text-align: center;
+        background-color: #6f5499;
+        color: #cdbfe3;
+        padding: 80px 0;
+        text-shadow: 0 1px 0 rgb(0 0 0 / 10%);
+      }
+      .lead {
+        margin: 0 auto 30px;
+        font-weight: 300;
+        line-height: 1.4;
+      }
+      .bs-docs-booticon-outline {
+        display: inline-block;
+        font-weight: 500;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 15%;
+        width: 144px;
+        height: 144px;
+        font-size: 108px;
+        line-height: 140px;
+        background-color: transparent;
+        border: 1px solid #cdbfe3;
+        margin: 20px auto;
+      }
+      .btn-outline-inverse {
+        border: 1px solid #fff;
+        color: #fff;
+        width: auto;
+        font-weight: 450;
+      }
+
+      .btn-outline-inverse:hover {
+        background-color: #fff;
+      }
+      .bs-docs-featurette {
+        text-align: center;
+        padding: 100px 0;
+        border-bottom: 1px solid #e5e5e5;
+      }
+
+      .half-rule {
+        width: 100px;
+        height: 0;
+        border: 0;
+        border-top: 2px solid #eee;
+        margin: 40px auto;
+      }
+
+      .btn-outline {
+        color: #563d7c;
+        border-color: #563d7c;
+        background-color: transparent;
+      }
+      .btn-outline:hover {
+        background-color: #563d7c;
+        color: #fff;
+      }
+      .bs-docs-featurette-title {
+        font-weight: 400;
+        color: #333;
+        margin-bottom: 5px;
+      }
+
+      .img-responsive {
+        margin-top: 0;
+      }
+
+      .bs-docs-footer {
+        background-color: #2a2730;
+        color: #99979c;
+        text-align: left;
+        padding: 50px 0;
+      }
+
+      li {
+        display: inline-block;
+        padding-right: 15px;
+      }
+
+      .bs-docs-footer-links {
+        list-style: none;
+        color: #eee;
+        margin-bottom: 30px;
+        padding-left: 0;
+      }
+      .bs-docs-footer a {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1.标题区域 -->
+    <header id="top">
+      <div class="container">
+        <div class="navbar-header">
+          <!-- 点击右边将会出现导航条 -->
+          <button
+            class="navbar-toggle collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#bs-navbar"
+            aria-controls="bs-navbar"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="../" class="navbar-brand">Bootstrap</a>
+        </div>
+        <nav id="bs-navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="../getting-started/">起步</a>
+            </li>
+            <li>
+              <a href="../css/">全局 CSS 样式</a>
+            </li>
+            <li>
+              <a href="../components/">组件</a>
+            </li>
+            <li>
+              <a href="../javascript/">JavaScript 插件</a>
+            </li>
+            <li>
+              <a href="../customize/">定制</a>
+            </li>
+            <li>
+              <a class="reddot" href="https://www.youzhan.org" target="_blank"
+                >网站实例</a
+              >
+            </li>
+            <li>
+              <a href="https://www.jekyll.com.cn" target="_blank">Jekyll</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#" target="_blank">Bootstrap中文网</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- 2.主体区域 -->
+    <main id="container" class="bs-docs-masthead">
+      <div class="container">
+        <span class="bs-docs-booticon-outline">B</span>
+        <p class="lead">
+          Bootstrap 是最受欢迎的 HTML、CSS 和 JS
+          框架，用于开发响应式布局、移动设备优先的 WEB 项目。
+        </p>
+        <p class="lead">
+          <a href="#" class="btn btn-outline-inverse btn-lg">下载 Bootstrap</a>
+        </p>
+        <p class="version">当前版本： v3.3.7 | 文档更新于：2021-01-18</p>
+      </div>
+    </main>
+
+    <!-- 3.详细设计列表 -->
+    <div class="bs-docs-featurette">
+      <div class="container">
+        <h2 class="bs-docs-featurette-title">
+          为所有开发者、所有应用场景而设计。
+        </h2>
+        <p class="lead">
+          Bootstrap
+          让前端开发更快速、简单。所有开发者都能快速上手、所有设备都可以适配、所有项目都适用。
+        </p>
+        <hr class="half-rule" />
+        <div class="row">
+          <div class="col-sm-4">
+            <img
+              src="./img/sass-less.png"
+              alt="Sass and Less support"
+              class="img-responsive"
+            />
+            <h3>预处理脚本</h3>
+            <p>
+              虽然可以直接使用 Bootstrap 提供的 CSS 样式表，不要忘记 Bootstrap
+              的源码是基于最流行的 CSS 预处理脚本 -
+              <a href="../css/#less">Less</a> 和
+              <a href="../css/#sass">Sass</a> 开发的。你可以采用预编译的 CSS
+              文件快速开发，也可以从源码定制自己需要的样式。
+            </p>
+          </div>
+          <div class="col-sm-4">
+            <img
+              src="./img/devices.png"
+              alt="Responsive across devices"
+              class="img-responsive"
+            />
+            <h3>一个框架、多种设备</h3>
+            <p>
+              你的网站和应用能在 Bootstrap
+              的帮助下通过同一份代码快速、有效适配手机、平板、PC
+              设备，这一切都是 CSS 媒体查询（Media Query）的功劳。
+            </p>
+          </div>
+          <div class="col-sm-4">
+            <img
+              src="./img/components.png"
+              alt="Components"
+              class="img-responsive"
+            />
+            <h3>特性齐全</h3>
+            <p>
+              Bootstrap 提供了全面、美观的文档。你能在这里找到关于 HTML
+              元素、HTML 和 CSS 组件、jQuery 插件方面的所有详细文档。
+            </p>
+          </div>
+        </div>
+        <hr class="half-rule" />
+        <p class="lead">
+          Bootstrap 是完全开源的。它的代码托管、开发、维护都依赖 GitHub 平台。
+        </p>
+        <a
+          href="https://github.com/twbs/bootstrap"
+          class="btn btn-outline btn-lg"
+          >查看 GitHub 项目主页</a
+        >
+      </div>
+    </div>
+
+    <!-- 4.网站构建列表 -->
+    <div class="bs-docs-featurette">
+      <div class="container">
+        <h2 class="bs-docs-featurette-title">基于 Bootstrap 构建的网站</h2>
+        <p class="lead">
+          全球数以百万计的网站都是基于 Bootstrap
+          构建的。你可以先参观一下我们提供的<a
+            href="../getting-started/#examples"
+            >实例精选</a
+          >或者看一看我们粉丝的网站吧。
+        </p>
+
+        <hr class="half-rule" />
+
+        <hr class="half-rule" />
+
+        <p class="lead">我们在“优站精选”里展示了许多精美的 Bootstrap 网站。</p>
+        <a href="https://www.youzhan.org" class="btn btn-outline btn-lg"
+          >逛一逛“优站精选”</a
+        >
+      </div>
+    </div>
+
+    <!-- 5.尾部 -->
+    <footer class="bs-docs-footer">
+      <div class="container">
+        <ul class="bs-docs-footer-links">
+          <li><a href="https://github.com/twbs/bootstrap">GitHub 仓库</a></li>
+          <li><a href="../getting-started/#examples">实例</a></li>
+          <li><a href="https://www.youzhan.org">优站精选</a></li>
+          <li><a href="../about/">关于</a></li>
+        </ul>
+
+        <p>
+          Designed and built with all the love in the world by
+          <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and
+          <a href="https://twitter.com/fat" target="_blank">@fat</a>. Maintained
+          by the
+          <a href="https://github.com/orgs/twbs/people">core team</a> with the
+          help of
+          <a href="https://github.com/twbs/bootstrap/graphs/contributors"
+            >our contributors</a
+          >.
+        </p>
+
+        <p>
+          本项目源码受
+          <a
+            rel="license"
+            href="https://github.com/twbs/bootstrap/blob/master/LICENSE"
+            target="_blank"
+            >MIT</a
+          >开源协议保护，文档受
+          <a
+            rel="license"
+            href="https://creativecommons.org/licenses/by/3.0/"
+            target="_blank"
+            >CC BY 3.0</a
+          >
+          开源协议保护。
+        </p>
+      </div>
+    </footer>
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>toString</title>
+	<script type="text/javascript">
+		function Person(){}
+
+		//创建实例
+		var p1 = new Person();
+		console.log(p1)
+		console.log(p1.valueOf())
+
+
+		console.log(p1.toString())  //[object object]
+		console.log(p1.__proto__.__proto__.hasOwnProperty("toString"))
+
+		//当我们希望输出对象时不输出[object object],可以为对象中添加一个toString方法
+		
+		//只改变的时p1中的toString方法
+		p1.toString = function(){
+			return "返回Person本身的toString方法"
+		}
+
+		//修改Person原型的toString
+		Person.prototype.toString = function(){
+			return "返回Person本身的toString方法1"
+		}
+
+		console.log(p1.toString())
+	</script>
+</head>
+<body>
+
+</body>
+</html>

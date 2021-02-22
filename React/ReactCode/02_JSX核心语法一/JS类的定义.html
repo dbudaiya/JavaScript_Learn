@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // JavaScriptES6类的定义
+    // function Person(name, age) {
+    //   this.name = name;
+    //   this.age = age
+
+    // }
+
+    // function getName() {
+    //   console.log(this)
+    //   console.log(this.name)
+    // }
+    // Person.prototype.getName = getName
+
+    // const app = new Person('aa', 11);
+    // app.getName()
+
+    // 类
+    // class Person {
+    //   constructor(name, age) {
+    //     this.name = name
+    //     this.age = age
+
+    //   }
+
+    //   Call() {
+    //     console.log(this)
+    //     console.log(this.name, this.age)
+
+    //   }
+    // }
+
+    // const app = new Person("aa", 11)
+    // // app.Call()
+
+
+    // let obj = {
+    //   name: '杜审言',
+    //   age: 12
+    // }
+
+    // app.Call.call(obj)
+
+    // // bind
+    // func = app.Call.bind(obj)
+    // func()
+
+    function Person(name, age) {
+      this.name = name
+      this.age = age
+
+      this.seting = function () {
+        console.log(this)
+      }
+    }
+
+    Person.prototype.Call = function () {
+      console.log(this)
+      console.log(this.name, this.age, "Calling")
+    }
+
+    const app = new Person("xiaobudaii", 12);
+    app.Call()
+    app.seting()
+    const obj = {
+      name: 'dushenyan',
+      age: 1987
+    }
+
+    // call改变this指向,就算是对的指向也改变
+
+    app.Call.call(obj)
+
+    // bind
+    app.Call.bind(obj)()
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

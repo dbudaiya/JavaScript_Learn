@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01-基本使用</title>
+    <style type="text/css">
+      .container {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+
+        /* (手机端查看比较好)
+        flex-wrap:nowrap(默认) | wrap | wrap-reverse;
+        nowrap（默认）：不换行。
+        wrap：换行，第一行在上方。
+        wrap-reverse：换行，第一行在下方。
+
+        当垂直居中时，如果不换行nowrap,align-items: center; 如果多行wrap,要用align-content: center; 
+        */
+        flex-wrap: wrap;
+      }
+      .item {
+        margin: 10px 0;
+        border-radius: 10%;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">元素1</div>
+      <div class="item">元素2</div>
+      <div class="item">元素3</div>
+      <div class="item">元素4</div>
+      <div class="item">元素5</div>
+    </div>
+
+    <script>
+      const items = document.querySelectorAll(".item");
+      for (let i in items) {
+        const rand1 = Math.round(Math.random() * 255);
+        const rand2 = Math.round(Math.random() * 255);
+        const rand3 = Math.round(Math.random() * 255);
+        items[i].style.background =
+          "rgb(" + rand1 + "," + rand2 + "," + rand3 + ")";
+        // items[i].style.height = "200px";
+        items[i].style.width = "180px";
+      }
+    </script>
+  </body>
+</html>

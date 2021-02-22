@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>模块化使用</title>
+  </head>
+  <body>
+    <!-- <script type="module">
+      // 1.通用导入的形式
+      import * as A1 from "./js/01-基本使用/1-部分导出.js";
+      import * as A3 from "./js/01-基本使用/3-全部导出.js";
+
+      console.log(A1.say());
+      console.log(A3.say());
+
+      // 2. 解构赋值导入形式
+      import { name, say } from "./js/01-基本使用/3-全部导出.js";
+      console.log(name);
+
+      // 3. 简便的形式
+      import moren from "./js/01-基本使用/2-默认导出.js";
+      console.log(moren);
+
+    </script> -->
+
+    <script src="/dist/bundle.js">
+      // 4.babel形式打包导入
+        // 4.1 安装工具 babel-cli babel-preset-env browserify
+        // 4.2 npx babel src/js -d dist/js --preset=babel-preset-env (此之前创建好dist/js文件夹)
+        // 4.3 打包 npx browserify dist/js/app.js -o dist/bundle.js
+    </script>
+  </body>
+</html>
