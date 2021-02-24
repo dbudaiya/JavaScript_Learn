@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../源码/jquery-1.8.1.js"></script>
+    <script>
+      /*
+        1.forEach方法:
+            - 第一参:当前遍历到的元素;第二参:当前遍历到的值
+            -原生的forEach只能遍历数组,不能遍历伪数组*/
+
+      // 定义数组
+      const A1 = ["WHISTLE", "BOOMBAYAH", "PLAYING WITH FIRE"];
+
+      //   定义伪数组
+      var obj = {
+        1: "WHISTLE",
+        2: "BOOMBAYAH",
+        3: "PLAYING WITH FIRE",
+        length: 4,
+      };
+      // 1.1forEach遍历数组
+      A1.forEach(function (index, value) {
+        console.log(index, value);
+      });
+
+      // 1.2forEach遍历伪数组
+      //   obj.forEach(function (value, index) {
+      //     console.log(value, index);  //报错obj.forEach is not a function
+      //   });
+
+      /* 2.each方法:
+            - 第一参:当前遍历到的值;第二参:当前遍历到的元素;
+            - each可以遍历伪数组
+        */
+      // 2.1利用JQuery的each静态方法遍历数组
+      $.each(A1, function (index, value) {
+        console.log(index, value); //遍历出四个数组
+      });
+
+      // 2.2遍历伪数组
+      $.each(obj, function (index, value) {
+        console.log(index, value);
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

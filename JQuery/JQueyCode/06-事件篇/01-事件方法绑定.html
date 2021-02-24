@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../源码/jquery-1.8.1.js"></script>
+    <script>
+      $(function () {
+        /**
+         * JQ中有两种绑定事件方式
+         *  -evenName(fn)
+         *      -编码效率略高,但部分事件JQuery还没有实现,所以不能添加其事件
+         *  -on(eventName,fn)
+         *      -编码效率略低,所以js事件都可以添加上去
+         *  --注意点: 可以添加多个相同或者不同类型的事件,不管多少个都不会覆盖其之前的事件
+         */
+        //1.1第一种触发形式
+        $("button")
+          .eq(0)
+          .click(function () {
+            console.log("-------- 我将被点击触发(第一种形式)-------------");
+          });
+
+        //1.2第二种触发形式
+        $("button")
+          .eq(1)
+          .on("click", function () {
+            console.log("--------我将被点击触发(第二种触发形式----------");
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <button>我将被点击</button>
+    <button>我又将被点击</button>
+  </body>
+</html>

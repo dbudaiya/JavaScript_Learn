@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../源码/jquery-1.8.1.js"></script>
+    <script>
+      /*1.JQ入口函数的几种写法*/
+      // 1.1第一种
+      $(document).ready(function () {
+        console.log("---------------我将被打印啊啊啊啊啊啊啊-------------");
+      });
+      // 1.2第二种
+      jQuery(document).ready(function () {
+        console.log("-----------------我将被打印咿呀咿呀哟------------------");
+      });
+      // 1.3第三种(推荐)
+      $(function () {
+        console.log("------------------我还将被打印----------------------");
+      });
+
+      // 1.4第四种
+      jQuery(function () {
+        console.log("-----------------我能被打印嘛??????????----------------");
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

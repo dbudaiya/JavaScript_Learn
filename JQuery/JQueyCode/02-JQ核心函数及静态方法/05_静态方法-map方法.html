@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../源码/jquery-1.8.1.js"></script>
+    <script>
+      /*
+        1.map方法:
+            - 第一参:当前遍历到的元素;第二参:当前遍历到的值;第三参:当前被遍历的数组;
+            -原生的map只能遍历数组,不能遍历伪数组*/
+
+      // 定义数组
+      const A1 = ["WHISTLE", "BOOMBAYAH", "PLAYING WITH FIRE"];
+
+      //   定义伪数组
+      var obj = {
+        1: "WHISTLE",
+        2: "BOOMBAYAH",
+        3: "PLAYING WITH FIRE",
+        length: 4,
+      };
+      // 1.1map遍历数组
+      A1.map(function (value, index, arr) {
+        console.log(value, index, arr);
+      });
+
+      //  1.2map遍历伪数组
+      //   obj.map(function (value, index) {
+      //     console.log(value, index); //报错obj.map is not a function
+      //   });
+
+      /* 2.map方法:
+            - 第一参:当前遍历到的值;第二参:当前遍历到的元素;
+            - map可以遍历伪数组
+        */
+      // 2.1利用JQuery的map静态方法遍历数组
+      $.map(A1, function (index) {
+        // console.log(index);
+        return index > 1 ? index : null;
+      });
+
+      // 2.2遍历伪数组
+      $.map(obj, function (index, value, arr) {
+        console.log(index, value, arr); //undefined
+      });
+
+      /*
+        JQ中的each方法和map静态方法的区别
+            -each静态方法默认返回值是谁遍历我就返回谁
+            -map静态方法的默认返回值是一个空数组
+
+            回调中:
+                -each静态方法不支持在回调函数中对遍历数组进行处理
+                -map静态方法可以在回调函数中通过return对遍历数组进行算法处理,然后生成一新数组返回出去
+      */
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../源码/jquery-1.8.1.js"></script>
+    <style></style>
+    <script>
+      $(function () {
+        /*
+            1.dom.attr():
+                -作用:设置或返回被选元素的属性值
+                -参数:attr(name | pro | key, val | fn)
+        */
+        //   1.给img属性添加图片链接
+        $("img").attr({
+          src:
+            "https://pic1.zhimg.com/80/v2-b7a7aaae36c09b6850607b72c4a35d68_720w.jpg",
+        });
+        /**
+         * 2.dom.removeAttr(name)
+         *  -作用:从每一个匹配的元素中删除一个属性
+         *  -参数:要删除的属性名
+         */
+        //2.1将文档中超链接的href属性删除
+        $("a").removeAttr("href");
+
+        /**
+         * 3.dom.prop()
+         *  -作用:获取在匹配的元素集中的第一个元素的属性值。
+         *  -参数:prop(n | p | k, v | f)
+         */
+        // 3.1禁用页面上的所有复选框
+        $("input[type='checkbox']").prop({
+          disabled: true,
+        });
+        /**
+         * 4.dom.removeProp()
+         *  -作用:用来删除由.prop()方法设置的属性集
+         *  -参数:removeProp(name);
+         */
+        $("input[type='checkbox']").removeProp("disabled");
+      });
+    </script>
+  </head>
+  <body>
+    <img style="width: 180px" />
+    <a href="http://www.baidu.com">百度一下</a>
+    <input type="checkbox" />
+    <input type="checkbox" />
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../源码/jquery-1.8.1.js"></script>
+    <script>
+      /*1. 
+            $.trim():
+                -作用:去除trim两边的空格
+                -参数:要去除空格的字符串
+                -返回值:返回去除之后的字符串
+            */
+      $(function () {
+        var A1 = "    Hello JQuery     ";
+        console.log(A1);
+        console.log($.trim(A1));
+      });
+
+      /*2.
+            $.isWindow()
+                -作用:判断传入的对象是否是window对象
+                -返回值:true/false
+            */
+      var B1 = window;
+      console.log("判断该对象是否是window对象" + $.isWindow(B1));
+
+      /*3.
+            $.isArray()
+                -作用:判断传入的对象是否是Array对象
+                -返回值:true/false
+            */
+      const C1 = ["WHISTLE", "BOOMBAYAH", "PLAYING WITH FIRE"];
+      console.log("判断该对象是否是Array对象" + $.isArray(C1));
+
+      /*4.
+            $.isFunction()
+                -作用:判断传入的对象是否是函数对象
+                -返回值:true/false
+
+                -- JQuery框架本质上也是一函数对象创建出来的
+            */
+      var D1 = function(){};
+      console.log("判断该对象是否是函数对象" + $.isFunction(D1));
+     
+    </script>
+  </head>
+  <body></body>
+</html>

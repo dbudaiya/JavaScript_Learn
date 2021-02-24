@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../源码/jquery-1.8.1.js"></script>
+    <script>
+      $(function () {
+        $("button")
+          .click(function () {
+            console.log("-----------click--------------");
+          })
+          .mouseover(function () {
+            console.log("---------mouseover---------------");
+          });
+
+        /**
+         * off方法:
+         *  -如果不传递参数,会依次移除所以事件
+         *  -传参一个会移除所有指定类型的事件
+         *  -传参两个,会移除所有指定类型的指定事件
+         */
+        $("button").off("click");
+
+        var test = function () {
+          console.log("-----------click--------------");
+        };
+        $("button").off("click", test1);
+      });
+    </script>
+  </head>
+  <body>
+    <button>我将被点击</button>
+  </body>
+</html>

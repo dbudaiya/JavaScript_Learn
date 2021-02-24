@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../源码/jquery-1.8.1.js"></script>
+    <script>
+      /*
+        前提纲要:
+            -$():表示调用JQuery核心函数库内的方法
+            -
+        */
+
+      $(function () {
+        // 1.接收字符串选择器
+        var $box1 = $(".box1");
+         console.log($box1);
+
+        // 2.接收字符串代码片段并且插入到类box1中
+        var $p = $("<p>我是段落</p>"); //返回JQ对象,对象中保存创建的DOM元素
+        $box1.append($p);
+
+        // 3.接收DOM元素
+        var span = document.getElementsByTagName("span")[0]; //包装成JQ对象返回
+        var $span = $(span);
+        console.log($span);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <span>我是小段落</span>
+  </body>
+</html>

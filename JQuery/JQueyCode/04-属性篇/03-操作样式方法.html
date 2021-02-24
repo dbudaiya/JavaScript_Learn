@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../源码/jquery-1.8.1.js"></script>
+    <style>
+      .lino {
+        list-style: none;
+      }
+      .color {
+        color: brown;
+      }
+    </style>
+    <script>
+      $(function () {
+        /*
+            1.dom. addClass():
+                -作用:为每个匹配的元素添加指定的类名
+                -参数:(class|fn)
+                -如果要添加多个,多个类名之间使用空格隔开
+        */
+        //   1.给ul属性添加样式类
+        $("ul").addClass("lino");
+        $("li:last").addClass("color");
+        // $("ul li:last").addClass(function () {
+        //   return "item-" + $(this).index();
+        // });
+
+        /**
+         * 2.dom.removeClass([class|fn])
+         *  -作用:从每一个匹配的元素中删除一个属性
+         *  -参数:([class|fn])
+         *  -如果要删除多个,使用空格隔开删除多个
+         */
+        //2.1将最后一个li节点加上color类
+        $("li:last").removeClass("color");
+
+        /**
+         * 3.dom.toggleClass(class|fn[,sw])
+         *  -作用:如果存在（不存在）就删除（添加）一个类。
+         *  -参数:(class|fn[,sw])
+         */
+        // 3.1反之会添加上color类
+        $("li:last").toggleClass("color");
+      });
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+    </ul>
+  </body>
+</html>

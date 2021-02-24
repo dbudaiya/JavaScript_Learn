@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../源码/jquery-1.8.1.js"></script>
+    <script>
+      /* 冲突问题*/
+      // 1.释放$的冲突权 :释放操作必须在编写其他JQ代码之前,释放之后就不能再使用$,改为使用JQuery.
+      jQuery.noConflict();
+      jQuery(function () {
+        console.log("----------受够了我将被释放-------------------");
+      });
+
+      //   2.自定义释放权(一个访问符号)
+      var nj = jQuery.noConflict();
+      nj(function () {
+        console.log("-------我的权力被释放,权力使用者是nj关键字-------------");
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

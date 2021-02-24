@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../源码/jquery-1.8.1.js"></script>
+    <style>
+        img{
+            width: 1200px;
+        }
+    </style>
+
+    <script>
+      // 1.原生加载模式
+      window.onload = function () {
+        var img = document.getElementsByTagName("img")[0];
+        console.log(img);
+        // 原生的JS入口函数拿到DOM函数的宽高
+        var width = window.getComputedStyle(img).width;
+        console.log("JS拿到的宽" + width);
+      };
+
+      // 2.JQ加载模式
+      $(document).ready(function () {
+        console.log("----------我将被打印---------------");
+        var image = $("img");
+        console.log(image);
+        var wdh = image.width();
+        console.log("JQ拿到的宽高" + wdh);
+      });
+
+      /*
+        得到结果是JQ先返回宽度,还有一点是JQ返回的宽度没有单位,而JS中的getComoputedStyle中有"px"单位
+            区别:
+                - 原生JS和JQ入口函数的加载模式不同
+                - 原生JS会等到DOM元素加载完毕,并且图片也加载完毕后才会执行
+                - JQ会等到DOM元素加载完毕,但不会等到图片也加载完毕才执行代码
+        */
+    </script>
+  </head>
+  <body>
+    <img
+      src="https://www.bing.com/th?id=OHR.LeMorneBrabant_ZH-CN9699020288_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=HpEdgeAn"
+      alt=""
+    />
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../源码/jquery-1.8.1.js"></script>
+    <script>
+      // ---------------------------加载函数覆盖问题---------------------------------------------
+      /* 1.原生JS*/
+      window.onload = function () {
+        console.log("--------------------第一次打印-----------------------");
+      };
+      window.onload = function () {
+        console.log("--------------------第二次打印-----------------------");
+      };
+      window.onload = function () {
+        console.log("--------------------第三次打印-----------------------");
+      };
+
+      /* 2.JQ框架*/
+      $(document).ready(function () {
+        console.log("--------------------第一次打印-----------------------");
+      });
+      $(document).ready(function () {
+        console.log("--------------------第二次打印-----------------------");
+      });
+      $(document).ready(function () {
+        console.log("--------------------第三次打印-----------------------");
+      });
+
+      /*
+      区别:
+        -原生JS如果编写多个入口函数,后面编写函数会覆盖之前的函数
+        -JQ中编写多个入口函数,后面的不会覆盖之前的函数 
+    */
+    </script>
+  </head>
+  <body></body>
+</html>

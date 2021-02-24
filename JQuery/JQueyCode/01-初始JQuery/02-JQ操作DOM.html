@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01_原生操作DOM和JQ的区别</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+      }
+    </style>
+    <script src="../源码/jquery-3.3.1.min.js"></script>
+    <script>
+      // 2.JQ操作DOM形式
+      $(function () {
+        //   获取节点
+        $("div").css({
+            "fontSize":'58px'
+        })
+
+        // // 改变背景颜色
+        $("#A1").css({
+            "background": "blue" 
+        })
+
+        $(".A2").css({
+            "background":"orange"
+        })
+
+      });
+    </script>
+  </head>
+  <body>
+    <div>1</div>
+    <div id="A1">2</div>
+    <div class="A2">3</div>
+  </body>
+</html>
