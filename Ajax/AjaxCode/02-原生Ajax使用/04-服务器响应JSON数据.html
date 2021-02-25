@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .result {
+        width: 250px;
+        height: 250px;
+        border: 2px solid red;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        const btn = document.getElementById("btn");
+        const divs = document.getElementsByClassName("result")[0];
+
+        btn.onclick = function () {
+          const xhr = new XMLHttpRequest();
+          xhr.open("GET", "http://localhost:8000/json-server"); //启动服务server3.js文件
+          xhr.send();
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+              if (xhr.status >= 200 && xhr.status < 300) {
+                // console.log(xhr.response);
+
+                // 1.手动对数据转换
+                let data = JSON.parse(xhr.response);
+                console.log(data);
+                divs.innerHTML = data.name;
+
+                // 2.自动转换
+                // divs.innerHTML = xhr.response.name;
+              }
+            }
+          };
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <div class="result"></div>
+    <button id="btn">点击发送请求</button>
+  </body>
+</html>

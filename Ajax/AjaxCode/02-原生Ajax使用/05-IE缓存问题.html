@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .result {
+        width: 250px;
+        height: 250px;
+        border: 2px solid red;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        const btn = document.getElementById("btn");
+        const divs = document.getElementsByClassName("result")[0];
+        btn.onclick = function () {
+          const xhr = new XMLHttpRequest();
+          //   xhr.open("GET", "http://localhost:8000/server");
+          //解决办法
+          xhr.open("GET", "http://localhost:8000/server?time=" + Date.now()); //启动服务server1.js文件
+          xhr.send();
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+              if (xhr.status === 200 && xhr.status < 300) {
+                //   console.log(xhr.response);
+                divs.innerHTML = xhr.response;
+                /*
+                    使用IE和google各自运行其文件.点击按钮发送请求后,得到相同的结果
+                    然后在server1.js文件中修改response.send方法中的参数,在点击按钮发送请求后,IE不能正确的的到服务器的结果.
+                */
+              }
+            }
+          };
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <div class="result"></div>
+    <button id="btn">点击发送请求</button>
+  </body>
+</html>

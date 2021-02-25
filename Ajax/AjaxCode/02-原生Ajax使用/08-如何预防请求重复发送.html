@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .result {
+        width: 250px;
+        height: 250px;
+        border: 2px solid red;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        const btn = document.getElementById("btn");
+        const divs = document.getElementsByClassName("result")[0];
+        let xhr = null;
+        // 1.创建标识变量
+        let isSending = false;
+        btn.onclick = function () {
+          if (isSending) xhr.abort();
+          xhr = new XMLHttpRequest();
+          //   2.请求发送进行中.变量改为true,不能在继续发送请求
+          isSending = true;
+          xhr.open("GET", "http://localhost:8000/server4"); //启动服务server4.js文件,包含延时调用代码
+          xhr.send();
+          xhr.onreadystatechange = function () {
+            //   3.请求发送完毕,可在进行下次请求发送
+            if (xhr.readyState === 4) {
+              isSending = false;
+              if (xhr.status === 200 && xhr.status < 300) {
+                divs.innerHTML = xhr.response;
+              }
+            }
+          };
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <div class="result"></div>
+    <button id="btn">点击发送请求</button>
+  </body>
+</html>

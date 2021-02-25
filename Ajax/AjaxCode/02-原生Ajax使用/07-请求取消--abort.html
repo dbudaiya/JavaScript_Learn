@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        const btn1 = document.getElementById("btn1");
+        const btn2 = document.getElementById("btn2");
+
+        let xhr = null;
+        btn1.onclick = function () {
+          xhr = new XMLHttpRequest();
+          xhr.open("GET", "http://localhost:8000/server");
+          xhr.send();
+        };
+        btn2.onclick = function () {
+          xhr.abort();
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <button id="btn1">点击发送请求</button>
+    <button id="btn2">点击取消请求</button>
+  </body>
+</html>
